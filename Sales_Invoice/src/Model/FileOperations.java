@@ -84,17 +84,10 @@ public class FileOperations {
 
         for (int i =0; i < getHeaders.size(); i++) {
             InvoiceHeader invoices = getHeaders.get(i);
-            invoices.InvoiceLines = getLines.stream().filter(x -> x.getItemInvoiceNum()
-                    == invoices.getInvoiceNum()).collect(Collectors.toList());
-
-            //System.out.println("First Invoice is: " + getHeaders(0) );
+            invoices.InvoiceLines = getLines.stream().filter(x -> x.getItemInvoiceNum() == invoices.getInvoiceNum()).collect(Collectors.toList());
             }
         return getHeaders;
 
-        //InvoiceHeader invoiceContent = new InvoiceHeader(0);
-        //System.out.println("the first invoice is: " + invoiceContent(0) );
-
-        //System.out.println("First invoice is: " + getHeaders.get(0) );
     }
 
     // write in a csv file
